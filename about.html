@@ -27,7 +27,7 @@
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="visualize.html">Data Visualization</a>
-    <a href="about.html" class="active">About Us</a>
+    <a href="about.html" class="active" aria-current="page">About Us</a>
     <a href="create.html">Create</a>
     <a href="read.html">Read</a>
     <a href="update.html">Update</a>
@@ -36,11 +36,34 @@
 
   <main class="container">
     <h1>About Us</h1>
-    <div class="note">
-      <p><strong>Team</strong></p>
-      <p>Raj Karthik Manam — Frontend & CRUD</p>
-      <p>Ananya Gullapally — Charts & CSS</p>
-    </div>
+    <div class="team-section">
+  <h2>Our Team</h2>
+
+  <div class="team-member">
+    <h3>Raj Karthik Manam</h3>
+    <p><strong>Role:</strong> CRUD & Data Flow</p>
+    <p><strong>Contributions:</strong></p>
+    <ul>
+      <li>Set up repository and site navigation</li>
+      <li>Implemented Create / Read / Update / Delete UI (demo only)</li>
+      <li>Wired sample data + DOM-ready helpers</li>
+      <li>Authored About page and Mermaid ERD</li>
+    </ul>
+  </div>
+
+  <div class="team-member">
+    <h3>Ananya Gullapally</h3>
+    <p><strong>Role:</strong> Visualization & CSS</p>
+    <p><strong>Contributions:</strong></p>
+    <ul>
+      <li>Built Data Visualization page (Chart.js)</li>
+      <li>Refined CSS (contrast, tables, nav, motion-safe hover)</li>
+      <li>Improved ERD legibility and responsive chart cards</li>
+      <li>Wrote README documentation</li>
+    </ul>
+  </div>
+</div>
+
 
     <h2>Logical Data Model (Look & Feel)</h2>
     <p class="small">The design follows two one-to-many relationships: <b>Student → Enrollment</b> and <b>Course → Enrollment</b>.
