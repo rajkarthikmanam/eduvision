@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>EduVision — Data Visualization</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/charts.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="visualize.html" class="active">Data Visualization</a>
+    <a href="about.html">About Us</a>
+    <a href="create.html">Create</a>
+    <a href="read.html">Read</a>
+    <a href="update.html">Update</a>
+    <a href="delete.html">Delete</a>
+  </nav>
+
+  <main class="container">
+    <h1>Data Visualization</h1>
+    <div style="display:grid;gap:16px;grid-template-columns:repeat(3,1fr)">
+      <div><h3>Avg Grade by Course</h3><canvas id="barCourse"></canvas></div>
+      <div><h3>Students by Major</h3><canvas id="pieMajor"></canvas></div>
+      <div><h3>Avg Grade by Term</h3><canvas id="lineTerm"></canvas></div>
+    </div>
+  </main>
+</body>
+</html>
