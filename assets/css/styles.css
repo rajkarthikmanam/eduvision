@@ -71,3 +71,33 @@ input:focus,select:focus{
 
 /* small utility for rounded images/cards later */
 .rounded{ border-radius: var(--radius); overflow:hidden }
+
+/* Make all links clearly visible and accessible */
+a { color:#1d4ed8; font-weight:500; }
+a:hover { text-decoration: underline; }
+
+/* Stronger nav link color + hover underline for clarity */
+.nav a { color:#0f172a; }
+.nav a:hover { text-decoration: underline; }
+
+/* Improve table readability everywhere */
+.table thead th { background:#f1f5f9; font-weight:600; }
+.table tbody tr:nth-child(even){ background:#f8fafc }
+.table tbody tr:hover{ background:#eef2ff }
+
+/* Give diagrams/images a solid white card so transparent PNGs pop */
+img.erd, .figure-erd img {
+  display:block;
+  background:#ffffff;           /* fixes “white on white” look */
+  padding:12px;
+  border:1px solid #cbd5e1;
+  border-radius:12px;
+  box-shadow: 0 6px 16px rgba(2,6,23,.08);
+}
+
+/* Optional: slightly boost contrast of light images */
+img.erd { filter: contrast(1.05) saturate(1.02); }
+
+/* Tighten headings for stronger hierarchy */
+h1{font-size:42px; line-height:1.15}
+h2{font-size:26px}
