@@ -105,3 +105,34 @@ img.erd, .figure-erd img{
   box-shadow: 0 6px 16px rgba(2,6,23,.08);
   overflow:auto;
 }
+
+/* 1. Card hover animations */
+.table, .note, .erd-card, .figure-erd img {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.table:hover, .note:hover, .erd-card:hover, .figure-erd img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(2,6,23,.15);
+}
+
+/* 2. Gradient text for h1 */
+h1 {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 3. Enhanced active nav state */
+.nav a.active {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border-bottom: 3px solid var(--brand);
+  font-weight: 600;
+}
+
+/* 4. Smooth button press effect */
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 8px rgba(2,6,23,.1);
+}
