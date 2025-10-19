@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>EduVision — Read</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="visualize.html">Data Visualization</a>
+    <a href="about.html">About Us</a>
+    <a href="create.html">Create</a>
+    <a href="read.html" class="active">Read</a>
+    <a href="update.html">Update</a>
+    <a href="delete.html">Delete</a>
+  </nav>
+
+  <main class="container">
+    <h1>Students (Dummy Data)</h1>
+    <table class="table" id="studentsTable">
+      <thead><tr><th>ID</th><th>Name</th><th>Major</th><th>Age</th><th>GPA</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <script>
+    const tbody = document.querySelector('#studentsTable tbody');
+    students.forEach(s=>{
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${s.id}</td><td>${s.name}</td><td>${s.major}</td><td>${s.age}</td><td>${s.gpa}</td>`;
+      tbody.appendChild(tr);
+    });
+  </script>
+</body>
+</html>

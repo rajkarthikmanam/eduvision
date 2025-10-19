@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>EduVision — Delete</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+<script defer src="assets/js/main.js"></script>
+</head><body>
+<nav class="nav">
+  <a href="index.html">Home</a><a href="visualize.html">Data Visualization</a><a href="about.html">About Us</a>
+  <a href="create.html">Create</a><a href="read.html">Read</a><a href="update.html">Update</a><a href="delete.html" class="active">Delete</a>
+</nav>
+<main class="container">
+  <h1>Delete Student (Demo)</h1>
+  <label>Select Student<br>
+    <select id="del"></select>
+  </label><br><br>
+  <a class="btn" href="read.html" onclick="alert('(Demo) Would delete record');">Delete</a>
+</main>
+<script>
+  const del=document.getElementById('del');
+  students.forEach(s=>{
+    const o=document.createElement('option'); o.value=s.id; o.textContent=`#${s.id} — ${s.name}`; del.appendChild(o);
+  });
+</script>
+</body></html>
