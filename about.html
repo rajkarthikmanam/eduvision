@@ -4,6 +4,23 @@
   <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>EduVision — About Us</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Mermaid (renders ER diagrams from text) -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: "neutral",
+    fontFamily: "Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif",
+    themeVariables: {
+      primaryColor: "#ffffff",
+      primaryTextColor: "#0f172a",
+      lineColor: "#0f172a",
+      noteBkgColor: "#ffffff",
+      noteTextColor: "#0f172a"
+    }
+  });
+</script>
+
   <script defer src="assets/js/main.js"></script>
 </head>
 <body>
@@ -28,7 +45,38 @@
     <h2>Logical Data Model (Look & Feel)</h2>
     <p class="small">The design follows two one-to-many relationships: <b>Student → Enrollment</b> and <b>Course → Enrollment</b>.
   Each student can enroll in multiple courses, and each course can have many students.</p>
-    <img src="assets/img/erd_basic.png" class="erd" alt="ERD: Student–Enrollment–Course" style="max-width:100%;border:1px solid #e5e7eb;border-radius:10px"/>
+<!-- ERD rendered live with Mermaid -->
+<div class="erd-card">
+<pre class="mermaid">
+erDiagram
+  STUDENT ||--o{ ENROLLMENT : enrolls
+  COURSE  ||--o{ ENROLLMENT : has
+
+  STUDENT {
+    int id PK
+    string name
+    string major
+    int age
+    decimal gpa
+  }
+
+  COURSE {
+    int id PK
+    string code
+    string title
+    int credits
+    string dept
+  }
+
+  ENROLLMENT {
+    int id PK
+    int studentId FK
+    int courseId  FK
+    string term
+    decimal numeric_grade
+  }
+</pre>
+</div>
 
     <h2 style="margin-top:20px">Planned Full ERD (Dynamic Phase)</h2>
     <p class="small">Student, Instructor, Department, Course, Term, Enrollment.</p>

@@ -95,3 +95,13 @@ img.erd, .figure-erd img{
   box-shadow:var(--shadow);filter:contrast(1.05) saturate(1.02);
   max-width:100%;height:auto;
 }
+
+/* ERD card for Mermaid */
+.erd-card{
+  background:#fff;
+  padding:16px;
+  border:1px solid #cbd5e1;
+  border-radius:12px;
+  box-shadow: 0 6px 16px rgba(2,6,23,.08);
+  overflow:auto;
+}
