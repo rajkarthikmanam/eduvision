@@ -12,3 +12,62 @@ h1,h2{margin:16px 0}
 .btn:hover{background:var(--brand-dark)}
 .note{background:#eef2ff;border:1px dashed #93c5fd;padding:12px;border-radius:12px}
 input,select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px}
+:root{
+  --radius:12px;
+  --shadow: 0 6px 16px rgba(2,6,23,.08);
+}
+
+h1{font-size:42px; line-height:1.15; letter-spacing:.2px}
+h2{font-size:26px}
+
+.btn{
+  transition: transform .06s ease, box-shadow .2s ease;
+  box-shadow: var(--shadow);
+}
+.btn:focus{outline:2px solid #bfdbfe; outline-offset:3px}
+.btn:active{transform: translateY(1px)}
+
+/* inputs focus ring */
+input,select{
+  transition: box-shadow .2s ease, border-color .2s ease;
+  background:#fff;
+}
+input:focus,select:focus{
+  outline: none;
+  border-color:#93c5fd;
+  box-shadow: 0 0 0 3px rgba(147,197,253,.45);
+}
+
+/* subtle panel card */
+.note{
+  box-shadow: var(--shadow);
+}
+
+/* table zebra & hover */
+.table tbody tr:nth-child(even){ background:#f1f5f9 }
+.table tbody tr:hover{ background:#e2e8f0 }
+
+/* sticky nav & nicer active pill */
+.nav{
+  position: sticky; top:0; z-index: 10;
+  backdrop-filter: saturate(160%) blur(6px);
+}
+.nav a{
+  transition: background .15s ease, color .15s ease;
+}
+.nav a.active{
+  background: #e5edff;
+  font-weight:600;
+}
+
+/* responsive grid helper for charts if we ever reuse */
+.grid-3{
+  display:grid; gap:16px; grid-template-columns:repeat(3,1fr);
+}
+@media (max-width: 900px){
+  .grid-3{ grid-template-columns: 1fr; }
+  h1{font-size:34px}
+}
+
+/* small utility for rounded images/cards later */
+.rounded{ border-radius: var(--radius); overflow:hidden }
