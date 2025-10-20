@@ -1,74 +1,74 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EduVision Help Assistant</title>
-
-  <!-- Botpress webchat loader -->
-  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-
-  <style>
-    html,body{height:100%;margin:0;background:#0b1323;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#e6f1ff}
-    .wrap{min-height:100vh;display:flex;flex-direction:column;gap:20px;padding:28px}
-    h1{margin:0 0 6px;font-size:36px}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .card{background:#0f1a33;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px}
-    /* The inline chat container */
-    #webchat{flex:1;border:1px solid rgba(48,231,198,.25);border-radius:14px;overflow:hidden;background:#0b1323;min-height:65vh}
-    /* Force the widget to fill the container */
-    #webchat .bpWebchat{position:unset;width:100%;height:100%;max-width:100%;max-height:100%}
-    /* Hide the floating button if any other script tries to show it */
-    .bpFab{display:none!important}
-  </style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>EduVision — Student Performance Portal</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <h1>EduVision Help Assistant</h1>
-      <p>Ask about courses, instructors, credits, prerequisites, and terms offered.</p>
-    </header>
+  <nav class="nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="visualize.html">Data Visualization</a>
+    <a href="about.html">About Us</a>
+    <a href="create.html">Create</a>
+    <a href="read.html">Read</a>
+    <a href="update.html">Update</a>
+    <a href="delete.html">Delete</a>
+  </nav>
 
-    <section class="row">
-      <div class="card">
-        <h3>About this assistant</h3>
-        <p>Answers questions using a structured course dataset (code, name, dept, credits, instructor, prerequisites, term, difficulty).</p>
-      </div>
-      <div class="card">
-        <h3>Try asking…</h3>
-        <ul>
-          <li>“Tell me about <b>AI200</b>”</li>
-          <li>“Which courses teach <b>Python</b>?”</li>
-          <li>“Who teaches <b>Machine Learning</b>?”</li>
-        </ul>
-      </div>
-    </section>
+  <main class="container">
+  <h1>EduVision — Student Performance Portal</h1>
+  <p>
+    EduVision helps instructors and students track academic progress across courses.
+    It provides clean pages for browsing student and course records and a visualization
+    page to understand trends like average grades by course and term.
+  </p>
 
-    <!-- Inline chat renders here -->
-    <div id="webchat" aria-label="EduVision Chat"></div>
-  </main>
+  <section class="note">
+    <h2>Features</h2>
+    <ul>
+      <li>Pages for Students, Courses, and Enrollments with simple CRUD screens (demo in this phase).</li>
+      <li>Visualizations (bar, pie, line) to explore performance and enrollment trends.</li>
+      <li>Clear navigation and responsive layout.</li>
+    </ul>
+  </section>
 
-  <script>
-    // Initialize exactly once, with a selector (Karthik’s IDs)
+  <section class="note">
+    <h2>What’s next</h2>
+    <p>
+      In the continuation project we will add a proper MVC backend, connect a database
+      for persistence, and integrate a free public API (fetch-only).
+    </p>
+  </section>
+</main>
+
+<!-- Botpress WebChat bubble (Home page only) -->
+<script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+<script>
+  (function () {
+    // Guard so it only runs on the Home page
+    var isHome = location.pathname.endsWith('/index.html') || location.pathname === '/' || location.pathname === '';
+    if (!isHome) return;
+
     window.botpress.init({
       botId: "1d03a94e-6971-4d3f-bd61-0514cd7dd234",
       clientId: "b25eea09-e897-4538-afa8-6c280ac089f2",
-      selector: "#webchat",
+      // Default = floating bubble; do NOT pass "selector" and do NOT add custom CSS.
       configuration: {
         version: "v2",
         botName: "EduVision Help Assistant",
+        themeMode: "light",
         color: "#257caf",
         headerVariant: "glass",
-        themeMode: "light",
-        radius: 6,
-        feedbackEnabled: false,
-        soundEnabled: false,
-        proactiveMessageEnabled: false
+        variant: "solid",
+        proactiveMessageEnabled: false,  // keeps it from popping open automatically
+        feedbackEnabled: false
       }
     });
+  })();
+</script>
 
-    // Open automatically when ready
-    window.botpress.on && window.botpress.on("webchat:ready", () => window.botpress.open());
-  </script>
 </body>
 </html>
